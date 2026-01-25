@@ -138,7 +138,12 @@
 <article class="first-entry"> 
 <figure class="entry-cover">
             <img loading="lazy"
-                srcset='https://handy.baile.dev/posts/pico_temp/cover_hu_da5c8895ccf4c45f.png 360w,https://handy.baile.dev/posts/pico_temp/cover_hu_7aac9d66896bc570.png 480w,https://handy.baile.dev/posts/pico_temp/cover_hu_932d62c961b20d5d.png 720w,https://handy.baile.dev/posts/pico_temp/cover_hu_ca6f39c3300ba9ac.png 1080w,https://handy.baile.dev/posts/pico_temp/cover_hu_9ebff4d84754befa.png 1500w,https://handy.baile.dev/posts/pico_temp/cover.png 1920w'
+                srcset='
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_4dd10d8a88d5482f.webp 360w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_938c01d32f277faf.webp 480w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_d61d9205aa529564.webp 720w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_1d685416e0405b12.webp 1080w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_670db14cc01123d.webp 1500w ,https://handy.baile.dev/posts/pico_temp/cover.png 1920w'
                 src="https://handy.baile.dev/posts/pico_temp/cover.png"
                 sizes="(min-width: 768px) 720px, 100vw"
                 width="1920" height="1080"
@@ -161,7 +166,12 @@ Code Pico-SDK Installation After opening the Pico-SDK Quick-Start Guide, I reali
 <article class="post-entry"> 
 <figure class="entry-cover">
             <img loading="lazy"
-                srcset='https://handy.baile.dev/posts/diy_rack/front_finished_hu_afb792488b00c7d9.jpg 360w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_6e07fc4fbceed63e.jpg 480w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_8abadf43cb65ba2b.jpg 720w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_5e8c83fa54b67e2e.jpg 1080w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_22254586e7feb0e9.jpg 1500w,https://handy.baile.dev/posts/diy_rack/front_finished.jpg 3072w'
+                srcset='
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_2dff82860eb7a2cf.webp 360w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_9bb33290fdc9f41c.webp 480w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_76bec7988af79edd.webp 720w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_c3dacafe32a92731.webp 1080w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_c87cb5c03cd4899a.webp 1500w ,https://handy.baile.dev/posts/diy_rack/front_finished.jpg 3072w'
                 src="https://handy.baile.dev/posts/diy_rack/front_finished.jpg"
                 sizes="(min-width: 768px) 720px, 100vw"
                 width="3072" height="4096"
@@ -245,15 +255,18 @@ Side Piece Side Piece Nut Holder Download: STL Download: STL Source: FreeCad Sou
     };
 
 </script>
+<script src="/js/utterances.js"></script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
         const html = document.querySelector("html");
         if (html.dataset.theme === "dark") {
             html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
+            Utterances.setTheme("github-light");
         } else {
             html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
+            Utterances.setTheme("github-dark");
         }
     })
 

@@ -129,7 +129,12 @@
 <article class="post-entry tag-entry"> 
 <figure class="entry-cover">
             <img loading="lazy"
-                srcset='https://handy.baile.dev/posts/diy_rack/front_finished_hu_afb792488b00c7d9.jpg 360w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_6e07fc4fbceed63e.jpg 480w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_8abadf43cb65ba2b.jpg 720w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_5e8c83fa54b67e2e.jpg 1080w,https://handy.baile.dev/posts/diy_rack/front_finished_hu_22254586e7feb0e9.jpg 1500w,https://handy.baile.dev/posts/diy_rack/front_finished.jpg 3072w'
+                srcset='
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_2dff82860eb7a2cf.webp 360w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_9bb33290fdc9f41c.webp 480w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_76bec7988af79edd.webp 720w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_c3dacafe32a92731.webp 1080w ,
+                                https://handy.baile.dev/posts/diy_rack/front_finished_hu_c87cb5c03cd4899a.webp 1500w ,https://handy.baile.dev/posts/diy_rack/front_finished.jpg 3072w'
                 src="https://handy.baile.dev/posts/diy_rack/front_finished.jpg"
                 sizes="(min-width: 768px) 720px, 100vw"
                 width="3072" height="4096"
@@ -213,15 +218,18 @@ Side Piece Side Piece Nut Holder Download: STL Download: STL Source: FreeCad Sou
     };
 
 </script>
+<script src="/js/utterances.js"></script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
         const html = document.querySelector("html");
         if (html.dataset.theme === "dark") {
             html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
+            Utterances.setTheme("github-light");
         } else {
             html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
+            Utterances.setTheme("github-dark");
         }
     })
 

@@ -217,7 +217,12 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
   </header> 
 <figure class="entry-cover">
             <img loading="eager"
-                srcset='https://handy.baile.dev/posts/pico_temp/cover_hu_da5c8895ccf4c45f.png 360w,https://handy.baile.dev/posts/pico_temp/cover_hu_7aac9d66896bc570.png 480w,https://handy.baile.dev/posts/pico_temp/cover_hu_932d62c961b20d5d.png 720w,https://handy.baile.dev/posts/pico_temp/cover_hu_ca6f39c3300ba9ac.png 1080w,https://handy.baile.dev/posts/pico_temp/cover_hu_9ebff4d84754befa.png 1500w,https://handy.baile.dev/posts/pico_temp/cover.png 1920w'
+                srcset='
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_4dd10d8a88d5482f.webp 360w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_938c01d32f277faf.webp 480w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_d61d9205aa529564.webp 720w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_1d685416e0405b12.webp 1080w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_670db14cc01123d.webp 1500w ,https://handy.baile.dev/posts/pico_temp/cover.png 1920w'
                 src="https://handy.baile.dev/posts/pico_temp/cover.png"
                 sizes="(min-width: 768px) 720px, 100vw"
                 width="1920" height="1080"
@@ -263,7 +268,38 @@ I calculated an offset using a real thermometer, after waiting for the chip to w
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">exclude</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">entities</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">sensor.pico_temperature_raw</span>
-</span></span></code></pre></div><p><img alt="Temperature History" loading="lazy" src="/posts/pico_temp/home_assistant.png">
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  <picture  >
+    <source srcset="/posts/pico_temp/home_assistant_hu_8320e789817e7953.webp" type="image/webp" />
+  <img class="img-fluid" src="/posts/pico_temp/home_assistant.accfaebf804596515a89b29c8b0ebcfd.png" alt="Temperature History" loading="lazy" width="790" />
+</picture>
+
 Temperature History - 24/01/2026</p>
 <h2 id="extras">Extras<a hidden class="anchor" aria-hidden="true" href="#extras">#</a></h2>
 <p>After finishing the main the main features I added two more :)</p>
@@ -347,9 +383,71 @@ Temperature History - 24/01/2026</p>
 </table>
 <h3 id="rack-mount">Rack Mount<a hidden class="anchor" aria-hidden="true" href="#rack-mount">#</a></h3>
 <p>I also made a rack mount for the RP2040-Zero, to nourish my homelabing addiction :)
-<img alt="RP2040-Zero Rack Mount 3D Model" loading="lazy" src="/posts/pico_temp/3d_rack_mount.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  <picture  >
+    <source srcset="/posts/pico_temp/3d_rack_mount_hu_f90df46a50a4c98c.webp" type="image/webp" />
+  <img class="img-fluid" src="/posts/pico_temp/3d_rack_mount.27694b2b0449d6199837d763b3edaf90.png" alt="RP2040-Zero Rack Mount 3D Model" loading="lazy" width="1080" />
+</picture>
+
 RP2040-Zero Rack Mount 3D Model - 25/01/2026
-<img alt="RP2040-Zero Rack Mount Photo" loading="lazy" src="/posts/pico_temp/rack_mount.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  <picture  >
+    <source srcset="/posts/pico_temp/rack_mount_hu_546d50fd600a3349.webp" type="image/webp" />
+  <img class="img-fluid" src="/posts/pico_temp/rack_mount.6c0152e5274d51d1f03f61a440dc687c.png" alt="RP2040-Zero Rack Mount Photo" loading="lazy" width="1080" />
+</picture>
+
 RP2040-Zero Rack Mount - 25/01/2026</p>
 <p>Download: <a href="https://www.printables.com/model/1571245-rp2040-zero-rack-mount/files">STL</a>
 Source: <a href="https://github.com/HandyBaile/3d-models/blob/main/rack/rp2040_mount.FCStd">FreeCad</a></p>
@@ -447,15 +545,18 @@ Source: <a href="https://github.com/HandyBaile/3d-models/blob/main/rack/rp2040_m
     };
 
 </script>
+<script src="/js/utterances.js"></script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
         const html = document.querySelector("html");
         if (html.dataset.theme === "dark") {
             html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
+            Utterances.setTheme("github-light");
         } else {
             html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
+            Utterances.setTheme("github-dark");
         }
     })
 
