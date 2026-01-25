@@ -6,8 +6,19 @@
     <description>Recent content in Posts on Blog - Handy Baile</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Jan 2026 21:35:25 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jan 2026 11:17:28 +0100</lastBuildDate>
     <atom:link href="https://handy.baile.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RP2040-Zero Serial Thermometer</title>
+      <link>https://handy.baile.dev/posts/pico_temp/</link>
+      <pubDate>Sun, 25 Jan 2026 11:17:28 +0100</pubDate>
+      <guid>https://handy.baile.dev/posts/pico_temp/</guid>
+      <description>&lt;p&gt;With my new &lt;a href=&#34;../diy_rack&#34;&gt;addiction&lt;/a&gt;, I made the the mistake &lt;em&gt;???&lt;/em&gt; to install &lt;strong&gt;Home Assistant&lt;/strong&gt;, and wanted a thermometer and didn&amp;rsquo;t have any temperature sensor. But I remembered that the RP2040-Zeros in my drawer and the fact that they had internal temperature sensor.&lt;/p&gt;
+&lt;p&gt;After a short internet search I found &lt;strong&gt;learnembeddedsystems&lt;/strong&gt;&amp;rsquo; blog especially the article titled &amp;ldquo;&lt;strong&gt;RP2040’s On-Board Temperature Sensor&lt;/strong&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
+&lt;h2 id=&#34;pico-sdk-installation&#34;&gt;Pico-SDK Installation&lt;/h2&gt;
+&lt;p&gt;After opening the &lt;strong&gt;Pico-SDK Quick-Start Guide&lt;/strong&gt;, I realised that their just was a &lt;strong&gt;AUR&lt;/strong&gt; package, so after running &lt;code&gt;yay -S pico-sdk&lt;/code&gt; and setting up the build environment i was done.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>DIY Rack Build</title>
       <link>https://handy.baile.dev/posts/diy_rack/</link>
