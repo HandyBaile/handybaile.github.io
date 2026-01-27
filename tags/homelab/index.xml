@@ -2,152 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Homelab on Blog - Handy Baile</title>
-    <link>https://handy.baile.dev/tags/homelab/</link>
+    <link>http://localhost:1313/tags/homelab/</link>
     <description>Recent content in Homelab on Blog - Handy Baile</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Jan 2026 21:35:25 +0100</lastBuildDate>
-    <atom:link href="https://handy.baile.dev/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Jan 2026 08:48:45 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Forgot the Feet !!!</title>
+      <link>http://localhost:1313/posts/rack_feet/</link>
+      <pubDate>Tue, 27 Jan 2026 08:48:45 +0100</pubDate>
+      <guid>http://localhost:1313/posts/rack_feet/</guid>
+      <description>&lt;p&gt;I forgot to add to the rack feet 3D models to the &lt;a href=&#34;../diy_rack&#34;&gt;24/01/2026 article&lt;/a&gt;. So here they are:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  &lt;picture  &gt;
+    &lt;source srcset=&#34;http://localhost:1313/posts/rack_feet/3d_foot_hu_5984b63985de86b2.webp&#34; type=&#34;image/webp&#34; /&gt;
+  &lt;img class=&#34;img-fluid&#34; src=&#34;http://localhost:1313/posts/rack_feet/3d_foot.a6578351c391ccfc2fe2f5fbbb0f9348.jpg&#34; alt=&#34;&amp;ldquo;3D Rack Foot&amp;rdquo;&#34; loading=&#34;lazy&#34; width=&#34;1080&#34; /&gt;
+&lt;/picture&gt;
+
+Download: &lt;a href=&#34;https://www.printables.com/model/TODO/files&#34;&gt;STL&lt;/a&gt;
+Source: &lt;a href=&#34;https://github.com/HandyBaile/3d-models/blob/main/10inch_rack/foot.FCStd&#34;&gt;FreeCad&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>DIY Rack Build</title>
-      <link>https://handy.baile.dev/posts/diy_rack/</link>
+      <link>http://localhost:1313/posts/diy_rack/</link>
       <pubDate>Sat, 24 Jan 2026 21:35:25 +0100</pubDate>
-      <guid>https://handy.baile.dev/posts/diy_rack/</guid>
-      <description>&lt;p&gt;I have a new addiction &lt;strong&gt;Homelabing&lt;/strong&gt;, and it caused me to build a &lt;strong&gt;Custom Rack&lt;/strong&gt;, inspired by Symbiiote&amp;rsquo;s DIY Rack&lt;/p&gt;
+      <guid>http://localhost:1313/posts/diy_rack/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Edit: I&amp;rsquo;ve added the feet files &lt;a href=&#34;../rack_feet&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I have a new addiction &lt;strong&gt;Homelabing&lt;/strong&gt;, and it caused me to build a &lt;strong&gt;Custom Rack&lt;/strong&gt;, inspired by Symbiiote&amp;rsquo;s DIY Rack&lt;/p&gt;
 &lt;h1 id=&#34;build&#34;&gt;Build&lt;/h1&gt;
 &lt;p&gt;I&amp;rsquo;m not going to explain how to screw bolts into holes but i&amp;rsquo;m going to give you a list of all the &lt;strong&gt;Required Parts&lt;/strong&gt; (3D Prints and Hardware).&lt;/p&gt;
 &lt;h2 id=&#34;required-parts&#34;&gt;Required Parts&lt;/h2&gt;
 &lt;h3 id=&#34;3d-prints&#34;&gt;3D Prints&lt;/h3&gt;
-&lt;p&gt;I&amp;rsquo;ve printed almost all of the Rack &lt;strong&gt;3D Printed&lt;/strong&gt; pieces are made out of &lt;strong&gt;PETG&lt;/strong&gt;.&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;Side Piece&lt;/th&gt;
-          &lt;th&gt;Side Piece Nut Holder&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-    
-    
-    
-    
-    
-    
-  &lt;picture  &gt;
-    &lt;source srcset=&#34;https://handy.baile.dev/posts/diy_rack/3d_side_hu_14290fd4c9ba3034.webp&#34; type=&#34;image/webp&#34; /&gt;
-  &lt;img class=&#34;img-fluid&#34; src=&#34;https://handy.baile.dev/posts/diy_rack/3d_side.3134b660a8991fad53d7acdfcfd4711b.jpg&#34; alt=&#34;&amp;ldquo;3D Side Piece&amp;rdquo;&#34; loading=&#34;lazy&#34; width=&#34;1080&#34; /&gt;
-&lt;/picture&gt;
-&lt;/td&gt;
-          &lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-    
-    
-    
-    
-    
-    
-  &lt;picture  &gt;
-    &lt;source srcset=&#34;https://handy.baile.dev/posts/diy_rack/3d_side_nut_hu_4c77827b04477eed.webp&#34; type=&#34;image/webp&#34; /&gt;
-  &lt;img class=&#34;img-fluid&#34; src=&#34;https://handy.baile.dev/posts/diy_rack/3d_side_nut.cb94ac8483a2eb98fb84a13465b5dbfb.jpg&#34; alt=&#34;&amp;ldquo;3D Side Piece Nut Holder&amp;rdquo;&#34; loading=&#34;lazy&#34; width=&#34;1080&#34; /&gt;
-&lt;/picture&gt;
-&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Download: &lt;a href=&#34;https://www.printables.com/model/1570056-diy-rack-build-side/files&#34;&gt;STL&lt;/a&gt;&lt;/td&gt;
-          &lt;td&gt;Download: &lt;a href=&#34;https://www.printables.com/model/1570056-diy-rack-build-side/files&#34;&gt;STL&lt;/a&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Source: &lt;a href=&#34;https://github.com/HandyBaile/3d-models/blob/main/10inch_rack/side.FCStd&#34;&gt;FreeCad&lt;/a&gt;&lt;/td&gt;
-          &lt;td&gt;Source: &lt;a href=&#34;https://github.com/HandyBaile/3d-models/blob/main/10inch_rack/side_nut.FCStd&#34;&gt;FreeCad&lt;/a&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;Front/Back Piece&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-    
-    
-    
-    
-    
-    
-  &lt;picture  &gt;
-    &lt;source srcset=&#34;https://handy.baile.dev/posts/diy_rack/3d_front_hu_7a7927020a393e6b.webp&#34; type=&#34;image/webp&#34; /&gt;
-  &lt;img class=&#34;img-fluid&#34; src=&#34;https://handy.baile.dev/posts/diy_rack/3d_front.b922fa88700b7fe2a41ccbdbc38ac270.jpg&#34; alt=&#34;&amp;ldquo;3D Front/Back Piece&amp;rdquo;&#34; loading=&#34;lazy&#34; width=&#34;1080&#34; /&gt;
-&lt;/picture&gt;
-&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;Download: &lt;a href=&#34;https://www.printables.com/model/1160147-diy-10-inch-rack/files&#34;&gt;STL&lt;/a&gt;&lt;/td&gt;
-          &lt;td&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;hardware&#34;&gt;Hardware&lt;/h3&gt;
-&lt;p&gt;Every item can be found on Amazon (FR).&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ve printed almost all of the Rack &lt;strong&gt;3D Printed&lt;/strong&gt; pieces are made out of &lt;strong&gt;PETG&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
