@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -13,16 +13,16 @@ Code
 Pico-SDK Installation
 After opening the Pico-SDK Quick-Start Guide, I realised that their just was a AUR package, so after running yay -S pico-sdk and setting up the build environment i was done.">
 <meta name="author" content="Handy Baile">
-<link rel="canonical" href="http://localhost:1313/posts/pico_temp/">
+<link rel="canonical" href="https://handy.baile.dev/posts/pico_temp/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://handy.baile.dev/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://handy.baile.dev/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://handy.baile.dev/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://handy.baile.dev/apple-touch-icon.png">
+<link rel="mask-icon" href="https://handy.baile.dev/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/pico_temp/">
+<link rel="alternate" hreflang="en" href="https://handy.baile.dev/posts/pico_temp/">
 <noscript>
     <style>
         #theme-toggle,
@@ -74,7 +74,7 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="http://localhost:1313/posts/pico_temp/">
+</script><meta property="og:url" content="https://handy.baile.dev/posts/pico_temp/">
   <meta property="og:site_name" content="Blog - Handy Baile">
   <meta property="og:title" content="RP2040-Zero Serial Thermometer">
   <meta property="og:description" content="With my new addiction, I made the the mistake ??? to install Home Assistant, and wanted a thermometer and didn’t have any temperature sensor. But I remembered that the RP2040-Zeros in my drawer and the fact that they had internal temperature sensor.
@@ -86,9 +86,9 @@ Code Pico-SDK Installation After opening the Pico-SDK Quick-Start Guide, I reali
     <meta property="article:published_time" content="2026-01-25T11:17:28+01:00">
     <meta property="article:modified_time" content="2026-01-25T11:17:28+01:00">
     <meta property="article:tag" content="Domotics">
-    <meta property="og:image" content="http://localhost:1313/posts/pico_temp/cover.png">
+    <meta property="og:image" content="https://handy.baile.dev/posts/pico_temp/cover.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:1313/posts/pico_temp/cover.png">
+<meta name="twitter:image" content="https://handy.baile.dev/posts/pico_temp/cover.png">
 <meta name="twitter:title" content="RP2040-Zero Serial Thermometer">
 <meta name="twitter:description" content="With my new addiction, I made the the mistake ??? to install Home Assistant, and wanted a thermometer and didn&rsquo;t have any temperature sensor. But I remembered that the RP2040-Zeros in my drawer and the fact that they had internal temperature sensor.
 After a short internet search I found learnembeddedsystems&rsquo; blog especially the article titled &ldquo;RP2040’s On-Board Temperature Sensor&rdquo;.
@@ -106,13 +106,13 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://localhost:1313/posts/"
+      "item": "https://handy.baile.dev/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "RP2040-Zero Serial Thermometer",
-      "item": "http://localhost:1313/posts/pico_temp/"
+      "item": "https://handy.baile.dev/posts/pico_temp/"
     }
   ]
 }
@@ -130,7 +130,7 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
   "articleBody": "With my new addiction, I made the the mistake ??? to install Home Assistant, and wanted a thermometer and didn’t have any temperature sensor. But I remembered that the RP2040-Zeros in my drawer and the fact that they had internal temperature sensor.\nAfter a short internet search I found learnembeddedsystems’ blog especially the article titled “RP2040’s On-Board Temperature Sensor”.\nCode Pico-SDK Installation After opening the Pico-SDK Quick-Start Guide, I realised that their just was a AUR package, so after running yay -S pico-sdk and setting up the build environment i was done.\nThe Temperature Sensor float get_temp() { const float conversion_factor = 3.3f / (1\u003c\u003c12); return 27 - (adc_read() * conversion_factor - 0.706) / 0.001721 + OFFSET; } This is a direct reference to the learnembeddedsystems blog and the RP2040 Datasheet temperature formula. $$ T = \\frac{V - 0.706}{0.001721} $$ I calculated an offset using a real thermometer, after waiting for the chip to warm up and figured out that a $-5.5^{\\circ}\\mathrm{C}$ offset gave me a good enough estimation on my board.\nHome Assistant Configuration After struggling with Home Assistant config and reading the documentation, I came up with this configuration.yaml.\n# Raw sensor data sensor: - platform: serial serial_port: /dev/ttyACM0 baudrate: 115200 name: pico_temperature_raw value_template: \"{{ value | trim | float(0) }}\" # Treated data template: - sensor: - name: \"Pico Temperature\" unique_id: pico_temperature unit_of_measurement: \"°C\" device_class: temperature state: \"{{ states('sensor.pico_temperature_raw') | float | round(1) }}\" # Do not record the raw data recorder: exclude: entities: - sensor.pico_temperature_raw Temperature History - 24/01/2026\nExtras After finishing the main the main features I added two more :)\nColored LED float get_temp_frac(float temp, float lower, float upper) { return (temp - lower) / (upper - lower); } uint32_t color_from_temp(float temp) { float t; uint8_t r; uint8_t g; uint8_t b; if (temp \u003c TEMP_LOW) { t = get_temp_frac(temp, TEMP_LOWER, TEMP_LOW); r = 255 * (1 - t); g = 255 * (1 - t); b = 255; } else if (temp \u003c TEMP_NORMAL) { t = get_temp_frac(temp, TEMP_LOW, TEMP_NORMAL - TEMP_LOW); r = 0; g = 255 * t; b = 255 * (1 - t); } else if (temp \u003c TEMP_HIGH) { t = get_temp_frac(temp,- TEMP_NORMAL, TEMP_HIGH); r = 255 * t; g = 255 * (1 - t); b = 0; } else { r = 255; g = 0; b = 0; } return ((uint32_t) r \u003c\u003c 8) | ((uint32_t) g \u003c\u003c 16) | (uint32_t) b; } void update_led(float temp, bool cicle, PIO pio, uint sm) { uint32_t color = 0; if (temp \u003c= TEMP_HIGH || cicle) { color = color_from_temp(temp); } pio_sm_put_blocking(pio, sm, color \u003c\u003c 8u); } As the RP2040-Zero has a built in WS2812 LED, I decided to make it’s color transition depending on the temperature:\nTemperature Color $0^{\\circ}\\mathrm{C}$ White $10^{\\circ}\\mathrm{C}$ Blue $20^{\\circ}\\mathrm{C}$ Green $30^{\\circ}\\mathrm{C}$ Red $\\gt30^{\\circ}\\mathrm{C}$ Blinking Red Rack Mount I also made a rack mount for the RP2040-Zero, to nourish my homelabing addiction :) RP2040-Zero Rack Mount 3D Model - 25/01/2026 RP2040-Zero Rack Mount - 25/01/2026\nDownload: STL Source: FreeCad\nSources and Inspiration: Git Repository and Release: https://github.com/HandyBaile/pico-temp Pico-SDK Quick Start Guide: https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html#quick-start-your-own-project RP2040 Datasheet: https://pip-assets.raspberrypi.com/categories/814-rp2040/documents/RP-008371-DS-1-rp2040-datasheet.pdf?disposition=inline WS2812 PIO: https://github.com/raspberrypi/pico-examples/blob/master/pio/ws2812/ws2812.pio Home Assistant Serial: https://www.home-assistant.io/integrations/serial/ Home Assistant Templating: https://www.home-assistant.io/docs/configuration/templating/#processing-incoming-data learnembeddedsystems’ article: https://learnembeddedsystems.co.uk/using-the-rp2040-on-board-temperature-sensor ",
   "wordCount" : "534",
   "inLanguage": "en",
-  "image":"http://localhost:1313/posts/pico_temp/cover.png","datePublished": "2026-01-25T11:17:28+01:00",
+  "image":"https://handy.baile.dev/posts/pico_temp/cover.png","datePublished": "2026-01-25T11:17:28+01:00",
   "dateModified": "2026-01-25T11:17:28+01:00",
   "author":{
     "@type": "Person",
@@ -138,14 +138,14 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/posts/pico_temp/"
+    "@id": "https://handy.baile.dev/posts/pico_temp/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Blog - Handy Baile",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "https://handy.baile.dev/favicon.ico"
     }
   }
 }
@@ -170,7 +170,7 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Blog - Handy Baile (Alt + H)">Blog - Handy Baile</a>
+            <a href="https://handy.baile.dev/" accesskey="h" title="Blog - Handy Baile (Alt + H)">Blog - Handy Baile</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -196,7 +196,7 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://handy.baile.dev/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -207,7 +207,7 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://handy.baile.dev/">Home</a>&nbsp;»&nbsp;<a href="https://handy.baile.dev/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       RP2040-Zero Serial Thermometer
     </h1>
@@ -218,12 +218,12 @@ After opening the Pico-SDK Quick-Start Guide, I realised that their just was a A
 <figure class="entry-cover">
             <img loading="eager"
                 srcset='
-                                http://localhost:1313/posts/pico_temp/cover_hu_97fd77f35e8b9ba6.webp 360w ,
-                                http://localhost:1313/posts/pico_temp/cover_hu_b5950e1e800fee20.webp 480w ,
-                                http://localhost:1313/posts/pico_temp/cover_hu_f280e42349bd1bc6.webp 720w ,
-                                http://localhost:1313/posts/pico_temp/cover_hu_d31d89c2ca9981e2.webp 1080w ,
-                                http://localhost:1313/posts/pico_temp/cover_hu_22b3a83607bff12c.webp 1500w ,http://localhost:1313/posts/pico_temp/cover.png 1920w'
-                src="http://localhost:1313/posts/pico_temp/cover.png"
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_97fd77f35e8b9ba6.webp 360w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_b5950e1e800fee20.webp 480w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_f280e42349bd1bc6.webp 720w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_d31d89c2ca9981e2.webp 1080w ,
+                                https://handy.baile.dev/posts/pico_temp/cover_hu_22b3a83607bff12c.webp 1500w ,https://handy.baile.dev/posts/pico_temp/cover.png 1920w'
+                src="https://handy.baile.dev/posts/pico_temp/cover.png"
                 sizes="(min-width: 768px) 720px, 100vw"
                 width="1920" height="1080"
                 alt="RP2040-Zero at 20°C (LED/Serial Monitor) - 25/01/2026">
@@ -467,7 +467,7 @@ Source: <a href="https://github.com/HandyBaile/3d-models/blob/main/rack/rp2040_m
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/domotics/">Domotics</a></li>
+      <li><a href="https://handy.baile.dev/tags/domotics/">Domotics</a></li>
     </ul>
   </footer>
 
@@ -484,7 +484,7 @@ Source: <a href="https://github.com/HandyBaile/3d-models/blob/main/rack/rp2040_m
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">Blog - Handy Baile</a></span> · 
+        <span>&copy; 2026 <a href="https://handy.baile.dev/">Blog - Handy Baile</a></span> · 
 
     <span>
         Powered by

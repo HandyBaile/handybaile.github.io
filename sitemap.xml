@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://handy.baile.dev/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/homelab/</loc>
+    <loc>https://handy.baile.dev/tags/homelab/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/rack_feet/</loc>
+    <loc>https://handy.baile.dev/posts/rack_feet/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://handy.baile.dev/posts/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://handy.baile.dev/tags/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/domotics/</loc>
+    <loc>https://handy.baile.dev/tags/domotics/</loc>
     <lastmod>2026-01-25T11:17:28+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/pico_temp/</loc>
+    <loc>https://handy.baile.dev/posts/pico_temp/</loc>
     <lastmod>2026-01-25T11:17:28+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/diy_rack/</loc>
+    <loc>https://handy.baile.dev/posts/diy_rack/</loc>
     <lastmod>2026-01-24T21:35:25+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://handy.baile.dev/categories/</loc>
   </url>
 </urlset>

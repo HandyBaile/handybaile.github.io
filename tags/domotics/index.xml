@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Domotics on Blog - Handy Baile</title>
-    <link>http://localhost:1313/tags/domotics/</link>
+    <link>https://handy.baile.dev/tags/domotics/</link>
     <description>Recent content in Domotics on Blog - Handy Baile</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 25 Jan 2026 11:17:28 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/domotics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://handy.baile.dev/tags/domotics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RP2040-Zero Serial Thermometer</title>
-      <link>http://localhost:1313/posts/pico_temp/</link>
+      <link>https://handy.baile.dev/posts/pico_temp/</link>
       <pubDate>Sun, 25 Jan 2026 11:17:28 +0100</pubDate>
-      <guid>http://localhost:1313/posts/pico_temp/</guid>
+      <guid>https://handy.baile.dev/posts/pico_temp/</guid>
       <description>&lt;p&gt;With my new &lt;a href=&#34;../diy_rack&#34;&gt;addiction&lt;/a&gt;, I made the the mistake &lt;em&gt;???&lt;/em&gt; to install &lt;strong&gt;Home Assistant&lt;/strong&gt;, and wanted a thermometer and didn&amp;rsquo;t have any temperature sensor. But I remembered that the RP2040-Zeros in my drawer and the fact that they had internal temperature sensor.&lt;/p&gt;
 &lt;p&gt;After a short internet search I found &lt;strong&gt;learnembeddedsystems&lt;/strong&gt;&amp;rsquo; blog especially the article titled &amp;ldquo;&lt;strong&gt;RP2040’s On-Board Temperature Sensor&lt;/strong&gt;&amp;rdquo;.&lt;/p&gt;
 &lt;h1 id=&#34;code&#34;&gt;Code&lt;/h1&gt;
