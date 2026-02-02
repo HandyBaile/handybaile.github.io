@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Blog - Handy Baile</title>
-    <link>https://handy.baile.dev/categories/</link>
+    <link>https://handy.baile.dev/fr/categories/</link>
     <description>Recent content in Categories on Blog - Handy Baile</description>
     <generator>Hugo -- 0.154.5</generator>
-    <language>en-US</language>
-    <atom:link href="https://handy.baile.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr-FR</language>
+    <atom:link href="https://handy.baile.dev/fr/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

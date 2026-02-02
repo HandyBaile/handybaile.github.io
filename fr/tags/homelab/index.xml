@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Homelab on Blog - Handy Baile</title>
+    <link>http://localhost:1313/fr/tags/homelab/</link>
+    <description>Recent content in Homelab on Blog - Handy Baile</description>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>fr-FR</language>
+    <lastBuildDate>Tue, 27 Jan 2026 08:48:45 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/fr/tags/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Forgot the Feet !!!</title>
+      <link>http://localhost:1313/fr/posts/rack_feet/</link>
+      <pubDate>Tue, 27 Jan 2026 08:48:45 +0100</pubDate>
+      <guid>http://localhost:1313/fr/posts/rack_feet/</guid>
+      <description>&lt;p&gt;I forgot to add to the rack feet 3D models to the &lt;a href=&#34;../diy_rack&#34;&gt;24/01/2026 article&lt;/a&gt;. So here they are:&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  &lt;picture  &gt;
+    &lt;source srcset=&#34;http://localhost:1313/posts/rack_feet/3d_foot_hu_5984b63985de86b2.webp&#34; type=&#34;image/webp&#34; /&gt;
+  &lt;img class=&#34;img-fluid&#34; src=&#34;http://localhost:1313/posts/rack_feet/3d_foot.a6578351c391ccfc2fe2f5fbbb0f9348.jpg&#34; alt=&#34;&amp;ldquo;3D Rack Foot&amp;rdquo;&#34; loading=&#34;lazy&#34; width=&#34;1080&#34; /&gt;
+&lt;/picture&gt;
+
+Download: &lt;a href=&#34;https://www.printables.com/model/1574573-diy-rack-build-foot/files&#34;&gt;STL&lt;/a&gt;
+Source: &lt;a href=&#34;https://github.com/HandyBaile/3d-models/blob/main/10inch_rack/foot.FCStd&#34;&gt;FreeCad&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
