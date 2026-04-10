@@ -1,6 +1,6 @@
 "use strict";
 (() => {
-  // ns-hugo-imp:/home/theplaceholder/blog/themes/utterances/assets/mods/utterances/js/index.ts
+  // ns-hugo-imp:/home/handy/blosg/themes/utterances/assets/mods/utterances/js/index.ts
   var Utterances = class {
     setTheme(theme) {
       const msg = {
