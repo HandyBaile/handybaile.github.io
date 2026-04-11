@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume</title>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <style>
+/* Backbone CSS for Resume Template 1 */
+
+/* Basic */
+
+#vue-smart-pages-preview {
+  background-color: white;
+  color: black;
+  text-align: left;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+#vue-smart-pages-preview p,
+#vue-smart-pages-preview li,
+#vue-smart-pages-preview dl {
+  margin: 0;
+}
+
+/* Headings */
+
+#vue-smart-pages-preview h1,
+#vue-smart-pages-preview h2,
+#vue-smart-pages-preview h3 {
+  font-weight: bold;
+}
+
+#vue-smart-pages-preview h1 {
+  font-size: 2.5em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 0.25em;
+}
+
+#vue-smart-pages-preview h2,
+#vue-smart-pages-preview h3 {
+  margin-bottom: 0.25em;
+  margin-top: 1.0em;
+  font-size: 1.2em;
+}
+
+#vue-smart-pages-preview h1,
+#vue-smart-pages-preview h2 {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: darkgrey;
+}
+
+/* Lists */
+
+#vue-smart-pages-preview ul,
+#vue-smart-pages-preview ol {
+  padding-left: 1.5em;
+  margin: 0.2em 0 1.0em 0;
+}
+
+#vue-smart-pages-preview ul {
+  list-style-type: disc;
+}
+
+#vue-smart-pages-preview ol {
+  list-style-type: decimal;
+}
+
+/* Definition Lists */
+
+#vue-smart-pages-preview dl {
+  display: flex;
+}
+
+#vue-smart-pages-preview dl dt,
+#vue-smart-pages-preview dl dd:not(:last-child) {
+  flex: 1;
+}
+
+/* Tex */
+
+#vue-smart-pages-preview :not(span.katex-display) > span.katex {
+  font-size: 1em !important;
+}
+
+/* SVG & Images */
+
+#vue-smart-pages-preview svg.iconify {
+  vertical-align: -0.2em;
+}
+
+#vue-smart-pages-preview img {
+  max-width: 100%;
+}
+
+/* Header */
+
+#vue-smart-pages-preview .resume-header {
+  text-align: center;
+}
+
+#vue-smart-pages-preview .resume-header h1 {
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+#vue-smart-pages-preview .resume-header-item:not(.no-separator)::after {
+  content: " | ";
+}
+
+/* Citations */
+
+#vue-smart-pages-preview ul.crossref-list {
+  padding-left: 1.2em;
+}
+
+#vue-smart-pages-preview li.crossref-item p {
+  margin-left: 0.5em;
+}
+
+#vue-smart-pages-preview li.crossref-item::marker {
+  content: attr(data-caption);
+}
+
+#vue-smart-pages-preview sup.crossref-ref {
+  font-size: 100%;
+  top: 0;
+}
+
+/* Dark & print mode */
+
+.dark #vue-smart-pages-preview {
+  background-color: #334155;
+  color: #e5e7eb;
+}
+
+@media print {
+  #vue-smart-pages-preview {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .dark #vue-smart-pages-preview a {
+    color: black !important;
+  }
+}
+
+    /* Dynamic Styles */
+    body {
+      font-family: Noto Sans, HKST;
+      font-size: 13px;
+      background-color: #f5f5f5;
+      color: black;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    
+    #vue-smart-pages-preview {
+      background-color: white;
+      width: 793px;
+      max-width: 100%;
+      padding: 55px 45px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+    
+    :not(.resume-header-item) > a {
+      color: #CA3832;
+    }
+    
+    h1, h2, h3 {
+      color: #CA3832;
+    }
+    
+    h1, h2 {
+      border-bottom-color: #CA3832;
+    }
+    
+    p, li {
+      line-height: 1.30;
+    }
+    
+    h2, h3 {
+      line-height: 1.50;
+    }
+    
+    dl {
+      line-height: 1.35;
+    }
+    
+    h2 {
+      margin-top: 5px;
+    }
+    
+    @media print {
+      body {
+        background-color: white;
+        padding: 0;
+        margin: 0;
+      }
+      
+      #vue-smart-pages-preview {
+        width: 100%;
+        max-width: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 55px 45px;
+      }
+      
+      @page {
+        size: A4;
+        margin: 0;
+      }
+    }
+  
+  </style>
+</head>
+<body>
+  <main id="vue-smart-pages-preview">
+<div class="resume-header"></div><h1>Handy Baïle</h1>
+<dl>
+<dt><span class="iconify" data-icon="charm:person"></span> <a href="https://handy.baile.dev/" target="_blank" rel="noopener">handy.baile.dev</a></dt>
+<dd><span class="iconify" data-icon="tabler:brand-github"></span> <a href="https://github.com/HandyBaile" target="_blank" rel="noopener">github.com/HandyBaile</a></dd>
+</dl>
+<dl>
+<dt><span class="iconify" data-icon="tabler:brand-linkedin"></span> <a href="https://www.linkedin.com/in/handybaile/" target="_blank" rel="noopener">linkedin.com/in/handybaile</a></dt>
+<dd><span class="iconify" data-icon="tabler:mail"></span> <a href="mailto:handy@baile.dev">handy@baile.dev</a></dd>
+</dl>
+<br/>
+<h1></h1>
+<p>Étudiant en <strong>BUT Réseaux Informatiques et Télécommunications</strong>, passionné par l'administration systèmes et réseaux. Je développe de nombreux projets personnels.</p>
+<p>Je suis <strong>autonome, curieux, logique et motivé</strong> et recherche un emploi saisonnier pour l'<strong>été 2026</strong>.</p>
+<h2>Expériences</h2>
+<h3>Personnels</h3>
+<hr>
+<dl>
+<dt><strong>Création d'un Rack Réseau 10&quot;</strong></dt>
+<dd><strong>Décembre 2025</strong></dd>
+</dl>
+<p><em>Conception et Configuration d'un Réseau Local</em></p>
+<dl>
+<dt>Virtualisation</dt>
+<dd><span class="iconify" data-icon="streamline-logos:proxmox-logo-solid"></span> Proxmox</dd>
+</dl>
+<dl>
+<dt>Configuration et Sécurisation Réseau</dt>
+<dd>VLAN, Routage Statique, DHCP, ...</dd>
+</dl>
+<dl>
+<dt>Modélisation et Impression 3D</dt>
+<dd><span class="iconify" data-icon="simple-icons:freecad"></span> FreeCAD</dd>
+</dl>
+<br/>
+<dl>
+<dt><strong>Modification Minitel Telic 1</strong></dt>
+<dd><strong>Décembre 2024</strong></dd>
+</dl>
+<p><em>Conversion d'un Minitel Telic 1 en Terminal HDMI/USB</em></p>
+<p>Électronique</p>
+<dl>
+<dt>Conception de Circuit Imprimé</dt>
+<dd><span class="iconify" data-icon="file-icons:kicad"></span> KiCAD</dd>
+</dl>
+<dl>
+<dt>Programmation de Micro-Contrôleur</dt>
+<dd><span class="iconify" data-icon="devicon-plain:raspberrypi"></span> RP2040</dd>
+</dl>
+<h3>Professionnels</h3>
+<hr>
+<dl>
+<dt><strong>Stage DuoDay, Chef de Projet Informatique</strong></dt>
+<dd><strong>Novembre 2024</strong></dd>
+</dl>
+<dl>
+<dt>URSSAF</dt>
+<dd>Valbonne - Sophia Antipolis, France</dd>
+</dl>
+<h2>Compétences</h2>
+<dl>
+<dt><strong>Développement:</strong></dt>
+<dd><span class="iconify" data-icon="vscode-icons:file-type-python"></span> Python, <span class="iconify" data-icon="vscode-icons:file-type-c"></span> C, <span class="iconify" data-icon="vscode-icons:file-type-js-official"></span> JavaScript, <span class="iconify" data-icon="vscode-icons:file-type-html"></span> HTML / <span class="iconify" data-icon="vscode-icons:file-type-css"></span> CSS, <span class="iconify" data-icon="logos:java"></span> Java, <span class="iconify" data-icon="vscode-icons:file-type-sql" ></span> SQL</dd>
+</dl>
+<dl>
+<dt><strong>Systèmes et Réseaux:</strong></dt>
+<dd><span class="iconify" data-icon="logos:gnu"></span> GNU/Linux, VLAN, DHCP, Routage, Virtualisation</dd>
+</dl>
+<dl>
+<dt><strong>Outils:</strong></dt>
+<dd><span class="iconify" data-icon="vscode-icons:file-type-git"></span> Git, <span class="iconify" data-icon="simple-icons:ankermake"></span> Make, <span class="iconify" data-icon="logos:docker-icon"></span> Docker</dd>
+</dl>
+<dl>
+<dt><strong>Langues:</strong></dt>
+<dd>🇫🇷 Français (Maternelle), 🇬🇧 Anglais (Niveau B2)</dd>
+</dl>
+<h2>Formation</h2>
+<dl>
+<dt><strong>BUT Réseaux Informatiques et Télécommunications</strong></dt>
+<dd><strong>Septembre 2025 → Maintenant</strong></dd>
+</dl>
+<dl>
+<dt>IUT Nice Côte d'Azur - Branche Valbonne</dt>
+<dd>Biot - Sophia Antipolis, France</dd>
+</dl>
+<dl>
+<dt><strong>Baccalauréat Général</strong></dt>
+<dd><strong>Septembre 2022 → Juin 2025</strong></dd>
+</dl>
+<dl>
+<dt>Lycée Albert Calmette</dt>
+<dd>Nice, France</dd>
+</dl>
+
+  </main>
+</body>
+</html>
