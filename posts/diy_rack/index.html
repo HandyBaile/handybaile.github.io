@@ -271,7 +271,7 @@ I&rsquo;ve printed almost all of the Rack 3D Printed pieces are made out of PETG
     
   <picture  >
     <source srcset="/blog/posts/diy_rack/3d_side_hu_f941e29458c8056d.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/diy_rack/3d_side.3134b660a8991fad53d7acdfcfd4711b.jpg" alt="&ldquo;3D Side Piece&rdquo;" loading="lazy" width="1080" />
+  <img class="img-fluid" src="/blog/posts/diy_rack/3d_side.3134b660a8991fad53d7acdfcfd4711b.jpg" alt="&ldquo;3D Side Piece&rdquo;" loading="lazy" height="1080" width="1080" />
 </picture>
 </td>
           <td>
@@ -303,7 +303,7 @@ I&rsquo;ve printed almost all of the Rack 3D Printed pieces are made out of PETG
     
   <picture  >
     <source srcset="/blog/posts/diy_rack/3d_side_nut_hu_ecc08d79be2732ba.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/diy_rack/3d_side_nut.cb94ac8483a2eb98fb84a13465b5dbfb.jpg" alt="&ldquo;3D Side Piece Nut Holder&rdquo;" loading="lazy" width="1080" />
+  <img class="img-fluid" src="/blog/posts/diy_rack/3d_side_nut.cb94ac8483a2eb98fb84a13465b5dbfb.jpg" alt="&ldquo;3D Side Piece Nut Holder&rdquo;" loading="lazy" height="1080" width="1080" />
 </picture>
 </td>
       </tr>
@@ -349,7 +349,7 @@ I&rsquo;ve printed almost all of the Rack 3D Printed pieces are made out of PETG
     
   <picture  >
     <source srcset="/blog/posts/diy_rack/3d_front_hu_a55c9f628cb61fd2.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/diy_rack/3d_front.b922fa88700b7fe2a41ccbdbc38ac270.jpg" alt="&ldquo;3D Front/Back Piece&rdquo;" loading="lazy" width="1080" />
+  <img class="img-fluid" src="/blog/posts/diy_rack/3d_front.b922fa88700b7fe2a41ccbdbc38ac270.jpg" alt="&ldquo;3D Front/Back Piece&rdquo;" loading="lazy" height="1080" width="1080" />
 </picture>
 </td>
           <td></td>
@@ -400,7 +400,7 @@ I&rsquo;ve printed almost all of the Rack 3D Printed pieces are made out of PETG
     
   <picture  >
     <source srcset="/blog/posts/diy_rack/rack_rail_hu_825ddfa09037c7ed.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/diy_rack/rack_rail.b2c123497429901284c10c4b4238d74a.jpg" alt="&ldquo;10U Rack Rails&rdquo;" loading="lazy" width="1080" />
+  <img class="img-fluid" src="/blog/posts/diy_rack/rack_rail.b2c123497429901284c10c4b4238d74a.jpg" alt="&ldquo;10U Rack Rails&rdquo;" loading="lazy" height="1080" width="1080" />
 </picture>
 </td>
           <td>
@@ -432,7 +432,7 @@ I&rsquo;ve printed almost all of the Rack 3D Printed pieces are made out of PETG
     
   <picture  >
     <source srcset="/blog/posts/diy_rack/rack_screws_hu_1b3802bbc6b645e7.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/diy_rack/rack_screws.c128defe9ce43c18f6392055e48d9597.jpg" alt="&ldquo;M6 Rack Nut and Screws&rdquo;" loading="lazy" width="1080" />
+  <img class="img-fluid" src="/blog/posts/diy_rack/rack_screws.c128defe9ce43c18f6392055e48d9597.jpg" alt="&ldquo;M6 Rack Nut and Screws&rdquo;" loading="lazy" height="1080" width="1080" />
 </picture>
 </td>
       </tr>
@@ -474,7 +474,7 @@ I&rsquo;ve printed almost all of the Rack 3D Printed pieces are made out of PETG
     
   <picture  >
     <source srcset="/blog/posts/diy_rack/black_petg_hu_4e315ebe4b5840a8.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/diy_rack/black_petg.0f58eb4cfbbdc16603626a90f62199b1.jpg" alt="&ldquo;Black PETG&rdquo;" loading="lazy" width="1080" />
+  <img class="img-fluid" src="/blog/posts/diy_rack/black_petg.0f58eb4cfbbdc16603626a90f62199b1.jpg" alt="&ldquo;Black PETG&rdquo;" loading="lazy" height="1080" width="1080" />
 </picture>
 </td>
           <td></td>
@@ -574,26 +574,26 @@ I&rsquo;ve printed almost all of the Rack 3D Printed pieces are made out of PETG
     };
 
 </script>
-<script src="/blog/js/utterances.js"></script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
         const html = document.querySelector("html");
         if (html.dataset.theme === "dark") {
             html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
-            Utterances.setTheme("github-light");
         } else {
             html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
-            Utterances.setTheme("github-dark");
         }
     })
 
 </script>
+
 <script>
-    const baseURL = "https://handy.baile.dev/"
-    window.location.href = baseURL + window.location.pathname;
-</script>
-</body>
+    const baseURL = "https://handy.baile.dev";
+
+    if (window.location.hostname !== "handy.baile.dev") {
+        window.location.href = baseURL + window.location.pathname + window.location.search + window.location.hash;
+    }
+</script></body>
 
 </html>
