@@ -251,17 +251,29 @@ Required Parts 3D Prints I’ve printed almost all of the Rack 3D Printed pieces
     };
 
 </script>
+<script src="/blog/js/utterances.js"></script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
         const html = document.querySelector("html");
         if (html.dataset.theme === "dark") {
             html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
+            Utterances.setTheme("github-light");
         } else {
             html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
+            Utterances.setTheme("github-dark");
         }
     })
+
+    window.addEventListener('load', () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            Utterances.setTheme("github-dark");
+        } else {
+            Utterances.setTheme("github-light");
+        }
+    });
 
 </script>
 
