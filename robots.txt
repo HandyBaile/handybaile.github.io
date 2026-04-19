@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://handy.baile.dev/blog/sitemap.xml
