@@ -157,6 +157,9 @@ Code Pico-SDK Installation After opening the Pico-SDK Quick-Start Guide, I reali
   };
 </script>
     
+    
+    <link rel="stylesheet" href="/blog/css/syntax.css" integrity="" crossorigin="anonymous">
+    
 </head>
 <body id="top">
     <header class="header">
@@ -220,17 +223,7 @@ Code Pico-SDK Installation After opening the Pico-SDK Quick-Start Guide, I reali
 </div>
   </header> 
 <figure class="entry-cover">
-            <img loading="eager"
-                srcset='
-                                https://handy.baile.dev/blog/posts/pico_temp/cover_hu_97fd77f35e8b9ba6.webp 360w ,
-                                https://handy.baile.dev/blog/posts/pico_temp/cover_hu_b5950e1e800fee20.webp 480w ,
-                                https://handy.baile.dev/blog/posts/pico_temp/cover_hu_f280e42349bd1bc6.webp 720w ,
-                                https://handy.baile.dev/blog/posts/pico_temp/cover_hu_d31d89c2ca9981e2.webp 1080w ,
-                                https://handy.baile.dev/blog/posts/pico_temp/cover_hu_22b3a83607bff12c.webp 1500w ,https://handy.baile.dev/blog/posts/pico_temp/cover.png 1920w'
-                src="https://handy.baile.dev/blog/posts/pico_temp/cover.png"
-                sizes="(min-width: 768px) 720px, 100vw"
-                width="1920" height="1080"
-                alt="RP2040-Zero at 20°C (LED/Serial Monitor) - 25/01/2026">
+        <img loading="eager" src="https://handy.baile.dev/blog/posts/pico_temp/cover.png" alt="RP2040-Zero at 20°C (LED/Serial Monitor) - 25/01/2026">
         <figcaption>RP2040-Zero at 20°C (LED/Serial Monitor) - 25/01/2026</figcaption>
 </figure>
   <div class="post-content md-content"><p>With my new <a href="../diy_rack">addiction</a>, I made the the mistake <em>???</em> to install <strong>Home Assistant</strong>, and wanted a thermometer and didn&rsquo;t have any temperature sensor. But I remembered that the RP2040-Zeros in my drawer and the fact that they had internal temperature sensor.</p>
@@ -272,38 +265,7 @@ I calculated an offset using a real thermometer, after waiting for the chip to w
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">exclude</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">entities</span>:
 </span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">sensor.pico_temperature_raw</span>
-</span></span></code></pre></div><p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-    
-    
-    
-    
-    
-    
-  <picture  >
-    <source srcset="/blog/posts/pico_temp/home_assistant_hu_64a8fa6a2ea7801d.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/pico_temp/home_assistant.accfaebf804596515a89b29c8b0ebcfd.png" alt="Temperature History" loading="lazy" width="790" />
-</picture>
-
+</span></span></code></pre></div><p><img alt="Temperature History" loading="lazy" src="home_assistant.png">
 Temperature History - 24/01/2026</p>
 <h2 id="extras">Extras<a hidden class="anchor" aria-hidden="true" href="#extras">#</a></h2>
 <p>After finishing the main the main features I added two more :)</p>
@@ -387,71 +349,9 @@ Temperature History - 24/01/2026</p>
 </table>
 <h3 id="rack-mount">Rack Mount<a hidden class="anchor" aria-hidden="true" href="#rack-mount">#</a></h3>
 <p>I also made a rack mount for the RP2040-Zero, to nourish my homelabing addiction :)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-    
-    
-    
-    
-    
-    
-  <picture  >
-    <source srcset="/blog/posts/pico_temp/3d_rack_mount_hu_bf83d29ad1b91c74.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/pico_temp/3d_rack_mount.27694b2b0449d6199837d763b3edaf90.png" alt="RP2040-Zero Rack Mount 3D Model" loading="lazy" width="1080" />
-</picture>
-
+<img alt="RP2040-Zero Rack Mount 3D Model" loading="lazy" src="3d_rack_mount.png">
 RP2040-Zero Rack Mount 3D Model - 25/01/2026
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-    
-    
-    
-    
-    
-    
-  <picture  >
-    <source srcset="/blog/posts/pico_temp/rack_mount_hu_891225016dcfee1b.webp" type="image/webp" />
-  <img class="img-fluid" src="/blog/posts/pico_temp/rack_mount.6c0152e5274d51d1f03f61a440dc687c.png" alt="RP2040-Zero Rack Mount Photo" loading="lazy" width="1080" />
-</picture>
-
+<img alt="RP2040-Zero Rack Mount Photo" loading="lazy" src="rack_mount.png">
 RP2040-Zero Rack Mount - 25/01/2026</p>
 <p>Download: <a href="https://www.printables.com/model/1571245-rp2040-zero-rack-mount/files">STL</a>
 Source: <a href="https://github.com/HandyBaile/3d-models/blob/main/rack/rp2040_mount.FCStd">FreeCad</a></p>
