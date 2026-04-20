@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://handy.baile.dev/blog/</loc>
-    <lastmod>2026-01-27T08:48:45+01:00</lastmod>
+    <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
@@ -15,14 +15,21 @@
                 href="https://handy.baile.dev/blog/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/tags/homelab/</loc>
-    <lastmod>2026-01-27T08:48:45+01:00</lastmod>
-  </url><url>
-    <loc>https://handy.baile.dev/blog/posts/rack_feet/</loc>
-    <lastmod>2026-01-27T08:48:45+01:00</lastmod>
+    <loc>https://handy.baile.dev/blog/posts/minitel_display/</loc>
+    <lastmod>2026-04-19T21:27:07+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-FR"
+                href="https://handy.baile.dev/blog/fr/posts/minitel_display/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://handy.baile.dev/blog/posts/minitel_display/"
+                />
   </url><url>
     <loc>https://handy.baile.dev/blog/posts/</loc>
-    <lastmod>2026-01-27T08:48:45+01:00</lastmod>
+    <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
@@ -33,6 +40,12 @@
                 hreflang="en-US"
                 href="https://handy.baile.dev/blog/posts/"
                 />
+  </url><url>
+    <loc>https://handy.baile.dev/blog/tags/homelab/</loc>
+    <lastmod>2026-01-27T08:48:45+01:00</lastmod>
+  </url><url>
+    <loc>https://handy.baile.dev/blog/posts/rack_feet/</loc>
+    <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
     <loc>https://handy.baile.dev/blog/tags/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>

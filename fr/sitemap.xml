@@ -3,6 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://handy.baile.dev/blog/fr/</loc>
+    <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -12,6 +13,32 @@
                 rel="alternate"
                 hreflang="fr-FR"
                 href="https://handy.baile.dev/blog/fr/"
+                />
+  </url><url>
+    <loc>https://handy.baile.dev/blog/fr/posts/minitel_display/</loc>
+    <lastmod>2026-04-19T21:27:07+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://handy.baile.dev/blog/posts/minitel_display/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-FR"
+                href="https://handy.baile.dev/blog/fr/posts/minitel_display/"
+                />
+  </url><url>
+    <loc>https://handy.baile.dev/blog/fr/posts/</loc>
+    <lastmod>2026-04-19T21:27:07+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://handy.baile.dev/blog/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-FR"
+                href="https://handy.baile.dev/blog/fr/posts/"
                 />
   </url><url>
     <loc>https://handy.baile.dev/blog/fr/categories/</loc>
@@ -24,18 +51,6 @@
                 rel="alternate"
                 hreflang="fr-FR"
                 href="https://handy.baile.dev/blog/fr/categories/"
-                />
-  </url><url>
-    <loc>https://handy.baile.dev/blog/fr/posts/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://handy.baile.dev/blog/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/posts/"
                 />
   </url><url>
     <loc>https://handy.baile.dev/blog/fr/tags/</loc>
