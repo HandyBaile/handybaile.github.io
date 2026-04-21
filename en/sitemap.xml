@@ -2,83 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://handy.baile.dev/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/"
+                href="http://localhost:1313/blog/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/"
+                href="http://localhost:1313/blog/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/posts/minitel_display/</loc>
+    <loc>http://localhost:1313/blog/posts/minitel_display/</loc>
     <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/posts/minitel_display/"
+                href="http://localhost:1313/blog/fr/posts/minitel_display/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/posts/minitel_display/"
+                href="http://localhost:1313/blog/posts/minitel_display/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/posts/</loc>
+    <loc>http://localhost:1313/blog/posts/</loc>
     <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/posts/"
+                href="http://localhost:1313/blog/fr/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/posts/"
+                href="http://localhost:1313/blog/posts/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/tags/homelab/</loc>
+    <loc>http://localhost:1313/blog/tags/homelab/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
-    <loc>https://handy.baile.dev/blog/posts/rack_feet/</loc>
+    <loc>http://localhost:1313/blog/posts/rack_feet/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
   </url><url>
-    <loc>https://handy.baile.dev/blog/tags/</loc>
+    <loc>http://localhost:1313/blog/tags/</loc>
     <lastmod>2026-01-27T08:48:45+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/tags/"
+                href="http://localhost:1313/blog/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/tags/"
+                href="http://localhost:1313/blog/tags/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/tags/domotics/</loc>
+    <loc>http://localhost:1313/blog/tags/domotics/</loc>
     <lastmod>2026-01-25T11:17:28+01:00</lastmod>
   </url><url>
-    <loc>https://handy.baile.dev/blog/posts/pico_temp/</loc>
+    <loc>http://localhost:1313/blog/posts/pico_temp/</loc>
     <lastmod>2026-01-25T11:17:28+01:00</lastmod>
   </url><url>
-    <loc>https://handy.baile.dev/blog/posts/diy_rack/</loc>
+    <loc>http://localhost:1313/blog/posts/diy_rack/</loc>
     <lastmod>2026-01-24T21:35:25+01:00</lastmod>
   </url><url>
-    <loc>https://handy.baile.dev/blog/categories/</loc>
+    <loc>http://localhost:1313/blog/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/categories/"
+                href="http://localhost:1313/blog/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/categories/"
+                href="http://localhost:1313/blog/categories/"
                 />
   </url>
 </urlset>
