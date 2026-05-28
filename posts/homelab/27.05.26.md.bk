@@ -1,0 +1,173 @@
++++
+draft = false
+title = 'Homelab Map'
+date = '2026-05-27T21:43:01+02:00'
+tags = ["homelab"]
++++
+Homelab Map 
+---
+<link rel="stylesheet" href="/homelab/style.css"></link>
+<div class="topo-wrapper" id="topo-wrap">
+    <svg id="conn-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+    <div class="topo-legend">
+        <div class="legend-item ss-chip ss-internet" data-vlan="internet"><div class="legend-line" style="background:var(--blue)"></div>Internet</div>
+        <div class="legend-item ss-chip ss-wwan" data-vlan="wwan"><div class="legend-line" style="background-image:repeating-linear-gradient(to right, var(--yellow) 0 6px, transparent 6px 9px)"></div>WWAN</div>
+        <div class="legend-item ss-chip ss-vlan10" data-vlan="vlan10"><div class="legend-line" style="background:var(--teal)"></div>VLAN 10</div>
+    </div>
+    <br/>
+    <div class="topo-layout">
+        <div class="topo-row">
+            <div class="node ext" id="n-vps0" data-node="vps0">
+                <span class="n-icon">🖥</span>
+                <span class="n-label">IONOS VPS M</span>
+                <span class="n-sub">vps0.baile.dev - 🇫🇷</span>
+            </div>
+            <br/>
+            <div class="node ext" id="n-vps1" data-node="vps1">
+                <span class="n-icon">🖥</span>
+                <span class="n-label">IONOS VPS XXL+</span>
+                <span class="n-sub">vps1.baile.dev - 🇩🇪</span>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="topo-row">
+        <div class="node rsd" id="n-internet" data-node="internet">
+            <span class="n-icon">🌐</span>
+            <span class="n-label">Internet</span>
+        </div>
+    </div>
+    <br/>
+    <div class="topo-row">
+        <div class="node rsd" id="n-residential" data-node="residential">
+            <span class="n-icon">🏢</span>
+            <span class="n-label">Residential<br/>Network</span>
+        </div>
+    </div>
+    <br/>
+    <div class="topo-row">
+        <div class="bx bx-proxmox0" >
+            <div class="bx-label" id="n-proxmox0">
+                <span class="n-icon">🖥</span>
+                <span class="n-label">proxmox0</span>
+                <span class="n-sub">Dell Optiplex 3050 Micro</span>
+                <span class="n-sub">Intel Pentium G4560T</span>
+                <span class="n-sub">20GB DDR4 Memory</span>
+                <span class="n-sub">256GB SATA SSD</span>
+                <br/>
+                <span class="n-sub">VLAN 10 - 10.42.10.100</span>
+            </div>
+            <br/>
+            <div class="topo-row">
+              <div class="node fw" id="n-proxmox0-brd" data-node="proxmox0-brd" style="margin-right: 25px;">
+              <span class="n-icon">🔀</span>
+              <span class="n-label">proxmox0<br/> Bridge</span>
+              </div>
+              <div class="node fw" id="n-openwrt" data-node="openwrt">
+                <span class="n-icon">🛜</span>
+                <span class="n-label">OpenWRT</span>
+                <span class="n-sub">2 Cores</span>
+                <span class="n-sub">2GB RAM</span>
+                <span class="n-sub">32GB Storage</span>
+                <br/>
+                <span class="n-sub">VLAN 10 - 10.42.10.254</span>
+                <span class="n-sub">VLAN 15 - 10.42.15.254</span>
+                <span class="n-sub">VLAN 20 - 10.42.20.254</span>
+                <span class="n-sub">VLAN 30 - 10.42.30.254</span>
+                <span class="n-sub">VPN - 10.42.255.1</span>
+              </div>
+            </div>
+            <div class="hflex" style="align-items:flex-start; gap:14px; justify-content:center; padding-top: 14px;">
+              <div class="bx bx-vlan10">
+                <div class="vflex" style="margin-top:8px;">
+                  <div class="node lxc" id="n-adguard" data-node="adguard">
+                    <span class="n-icon">🚫</span>
+                    <span class="n-label">AdGuard Home</span>
+                    <span class="n-sub">10.0.10.XX</span>
+                    <span class="n-badge b-lxc">LXC</span>
+                  </div>
+                  <div class="node lxc" id="n-unifi-os" data-node="unifi-os">
+                    <span class="n-icon">🖧</span>
+                    <span class="n-label">Unifi OS Server</span>
+                    <span class="n-sub">10.0.10.XX</span>
+                    <span class="n-badge b-lxc">LXC</span>
+                  </div>
+                  <div class="node lxc" id="n-homarr" data-node="homarr">
+                    <span class="n-icon">📊</span>
+                    <span class="n-label">Homarr</span>
+                    <span class="n-sub">10.0.10.XX</span>
+                    <span class="n-badge b-lxc">LXC</span>
+                  </div>
+                </div>
+              </div>
+              <!-- VLAN 20 -->
+              <div class="bx bx-vlan20">
+                <div class="vflex" style="margin-top:8px;">
+                  <div class="node lxc" id="n-homelab-site" data-node="homelab-site">
+                    <span class="n-icon">📖</span>
+                    <span class="n-label">homelab-site</span>
+                    <span class="n-sub">10.0.20.XX</span>
+                    <span class="n-sub">nginx · this page</span>
+                    <span class="n-badge b-lxc">LXC</span>
+                  </div>
+                  <div class="node vm" id="n-jellyfin" data-node="jellyfin">
+                    <span class="n-icon">🎬</span>
+                    <span class="n-label">Jellyfin</span>
+                    <span class="n-sub">10.0.20.x</span>
+                    <span class="n-sub" style="color:var(--teal);font-style:italic;">(planned)</span>
+                    <span class="n-badge b-vm">VM</span>
+                  </div>
+                </div>
+              </div>
+              <!-- VLAN 30 -->
+              <div class="bx bx-vlan30">
+                <div class="bx bx-agent60-vm" style="margin-top:8px;">
+                  <div class="hflex" style="margin-top:8px; align-items:stretch;">
+                    <!-- agent60 -->
+                    <div class="bx bx-agent60-scripts">
+                      <div class="vflex" style="margin-top:8px;">
+                        <div class="node svc" id="n-reports" data-node="reports">
+                          <span class="n-icon">📅</span>
+                          <span class="n-label">Cron Reports</span>
+                          <span class="n-sub">Fri · Mon · Tue–Sun</span>
+                          <span class="n-badge b-svc">SVC</span>
+                        </div>
+                        <div class="node svc" id="n-claude-cli" data-node="claude-cli">
+                          <span class="n-icon">💬</span>
+                          <span class="n-label">Claude CLI</span>
+                          <span class="n-sub">claude -p</span>
+                          <span class="n-badge b-svc">SVC</span>
+                        </div>
+                        <div class="node svc" id="n-msmtp" data-node="msmtp">
+                          <span class="n-icon">📤</span>
+                          <span class="n-label">msmtp</span>
+                          <span class="n-sub">SMTP client</span>
+                          <span class="n-badge b-svc">SVC</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- auto-deploy -->
+                    <div class="bx bx-deploy">
+                      <div class="vflex" style="margin-top:8px;">
+                        <div class="node svc" id="n-ngrok" data-node="ngrok">
+                          <span class="n-icon">🌐</span>
+                          <span class="n-label">ngrok</span>
+                          <span class="n-sub">:443 tunnel</span>
+                          <span class="n-badge b-svc">SVC</span>
+                        </div>
+                        <div class="node svc" id="n-webhook" data-node="webhook">
+                          <span class="n-icon">🪝</span>
+                          <span class="n-label">webhook</span>
+                          <span class="n-sub">Node.js :3000</span>
+                          <span class="n-badge b-svc">SVC</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- end VLAN 30 -->
+            </div><!-- end VLANs hflex -->
+        </div>
+    </div>
+</div>
+<script src="/homelab/index.js"></script>

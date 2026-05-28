@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://handy.baile.dev/blog/fr/</loc>
+    <loc>https://handy.baile.dev/fr/</loc>
     <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/"
+                href="https://handy.baile.dev/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/"
+                href="https://handy.baile.dev/fr/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/fr/posts/minitel_display/</loc>
+    <loc>https://handy.baile.dev/fr/posts/minitel_display/</loc>
     <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/posts/minitel_display/"
+                href="https://handy.baile.dev/posts/minitel_display/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/posts/minitel_display/"
+                href="https://handy.baile.dev/fr/posts/minitel_display/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/fr/posts/</loc>
+    <loc>https://handy.baile.dev/fr/posts/</loc>
     <lastmod>2026-04-19T21:27:07+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/posts/"
+                href="https://handy.baile.dev/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/posts/"
+                href="https://handy.baile.dev/fr/posts/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/fr/categories/</loc>
+    <loc>https://handy.baile.dev/fr/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/categories/"
+                href="https://handy.baile.dev/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/categories/"
+                href="https://handy.baile.dev/fr/categories/"
                 />
   </url><url>
-    <loc>https://handy.baile.dev/blog/fr/tags/</loc>
+    <loc>https://handy.baile.dev/fr/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="https://handy.baile.dev/blog/tags/"
+                href="https://handy.baile.dev/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-FR"
-                href="https://handy.baile.dev/blog/fr/tags/"
+                href="https://handy.baile.dev/fr/tags/"
                 />
   </url>
 </urlset>

@@ -1,0 +1,648 @@
+
+:root {
+  --text:     var(--primary);   /* off-white — easier on the eyes than pure #fff */
+  --muted:    #707070;   /* medium gray for secondary text */
+  --blue:     #4d9eff;   /* network routing — clear blue */
+  --green:    #5dd674;   /* DNS — clean green */
+  --yellow:   #f5c842;   /* auto-deploy — warm amber */
+  --purple:   #b58aff;   /* physical / Mini PC — muted lavender (no longer dominant) */
+  --red:      #ff5a6c;   /* alerts — coral red */
+  --orange:   #ff8a5c;   /* automation — orange */
+  --teal:     #4dd6c2;   /* data / API — teal */
+  /* CLI-style monospace kept from the previous theme — both --font and --mono
+     point at the same stack so prose, UI labels, code spans, and tables all
+     read terminal. */
+  --font: 'SF Mono','JetBrains Mono','Cascadia Code','Fira Code',Consolas,monospace;
+}
+
+/* ── MAIN LAYOUT ──────────────────────────────────────────── */
+main { padding: 24px; max-width: 720px; margin: 0 auto; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ── TOPOLOGY ─────────────────────────────────────────────── */
+.topo-legend {
+  display: flex; flex-wrap: wrap; gap: 16px;
+  padding: 10px 14px; margin-bottom: 16px;
+  background: var(--entry); border-radius: 6px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #c0c0c0; }  /* brighter legend text */
+.legend-toggle {
+  margin-left: auto;
+  background: var(--bg3); color: var(--text);
+  border-radius: 4px;
+  ; font-size: 11px; font-weight: 500;
+  padding: 4px 10px; cursor: pointer;
+}
+.legend-toggle:hover { background: var(--theme); border-color: var(--blue); color: var(--blue); }
+.legend-toggle.active {
+  background: var(--blue); border-color: var(--blue); color: var(--theme);
+}
+.legend-toggle.active:hover { background: var(--blue); filter: brightness(1.1); color: var(--theme); }
+.legend-line  { width: 24px; height: 3px; border-radius: 1.5px; filter: brightness(1.15) saturate(1.1);}  /* thicker + subtle bloom so the color samples pop against true black */
+
+.topo-wrapper { position: relative; overflow: visible; }
+#conn-svg {
+  position: absolute; top: 0; left: 0;
+  pointer-events: none; overflow: visible; z-index: 1;
+}
+
+.topo-layout {
+  display: flex; flex-direction: column; gap: 14px;
+  position: relative; z-index: 10;
+  align-items: center;  /* each row hugs its content; Mini PC no longer stretches to full page width */
+}
+
+/* Rows */
+.topo-row {
+  display: flex; justify-content: center;
+  align-items: flex-start; gap: 10px; flex-wrap: wrap;
+}
+
+/* Boundary boxes */
+.bx {
+  border-radius: 8px;
+  padding: 10px; position: relative;
+}
+.bx-label {
+  position: absolute;
+  gap: 3px; padding: 8px 10px;
+  background: var(--entry); 
+  font-size: 10px; ; color: var(--muted);
+  white-space: nowrap; pointer-events: none;
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; align-items: center;
+}
+/* Outer "physical" boxes (Mini PC, Proxmox) use a dotted style so the eye
+   parses them as soft grouping containers, never as another connector line.
+   Inner subnet/service boxes keep a solid (but low-alpha) edge for grouping. */
+/* Box colors retuned for OLED — restrained accents that pop against #000
+   without screaming. Each box stays visually distinct so the hierarchy still
+   reads at a glance. */
+.bx-proxmox0 { border-color: rgba(181,138,255,.9);  background: rgba(181,138,255,.06); }                                          /* Mini PC outer — vivid purple (ties to the homelab_ H1) */
+.bx-proxmox  { border-color: rgba(129,140,248,.8);  background: rgba(129,140,248,.05);  min-width: 0; }                          /* Proxmox VE — indigo, sits between the Mini PC purple and the auto-deploy blue */
+.bx-vlan10   { border-color: rgba(93,214,116,.5);   background: rgba(93,214,116,.04);   min-width: 190px; align-self: flex-start; } /* VLAN 10 mgmt — green */
+.bx-vlan20   { border-color: rgba(77,214,194,.5);   background: rgba(77,214,194,.04);   min-width: 190px; align-self: flex-start; } /* VLAN 20 services — teal */
+.bx-vlan30   { border-color: rgba(255,90,108,.5);   background: rgba(255,90,108,.04);   min-width: 240px; align-self: flex-start; } /* VLAN 30 automation — coral */
+.bx-agent60-vm      { border-color: rgba(255,138,92,.5);   background: rgba(255,138,92,.04); }                                           /* agent60 VM — orange */
+.bx-agent60-scripts   { border-color: rgba(245,200,66,.55);  background: rgba(245,200,66,.04);   min-width: 130px; }                       /* agent60 script group — amber */
+.bx-deploy   { border-color: rgba(77,158,255,.55);  background: rgba(77,158,255,.04);   min-width: 110px; }                       /* auto-deploy — blue */
+
+.hflex { display: flex; gap: 10px; align-items: flex-start; }
+.vflex { display: flex; flex-direction: column; gap: 8px; }
+
+/* Nodes */
+.node {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 3px; padding: 8px 10px;
+  background: var(--entry);
+  border-radius: 6px; cursor: pointer;
+  position: relative; user-select: none;
+}
+.n-icon  { font-size: 18px; line-height: 1; }
+.n-label { font-size: 11px; font-weight: 600; color: var(--text); line-height: 1.3; }
+.n-sub   { font-size: 10px; color: var(--muted); font-family: var(--mono); line-height: 1.2; }
+.n-badge {
+  font-size: 9px; padding: 1px 5px; border-radius: 3px;
+  font-family: var(--mono); font-weight: 700; letter-spacing: .3px; margin-top: 1px;
+}
+.b-ext  { background: rgba(88,166,255,.15);  color: var(--blue); }
+.b-vm   { background: rgba(63,185,80,.2);    color: var(--green); }
+.b-lxc  { background: rgba(210,153,34,.2);   color: var(--yellow); }
+.b-svc  { background: rgba(255,123,114,.2);  color: var(--orange); }
+.b-fw   { background: rgba(248,81,73,.2);    color: var(--red); }
+
+/* Node type accent borders */
+.node.ext   { border-color: #1f6feb; }
+.node.rsd   { border-color: #388bfd; }
+.node.vm    { border-color: #2ea043; }
+.node.lxc   { border-color: #9e6a03; }
+.node.sw    { border-color: #8b5cf6; }
+.node.svc   { border-color: #b44f38; }
+.node.fw    { border-color: #8d1f1f; }
+
+.panel-head {
+  padding: 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  flex-shrink: 0;
+}
+.panel-ico  { font-size: 26px; flex-shrink: 0; }
+.panel-meta { flex: 1; min-width: 0; }
+.panel-meta h2 { font-size: 15px; font-weight: 600; }
+.panel-meta .panel-type { font-size: 11px; color: var(--muted); font-family: var(--mono); }
+.panel-close {
+  background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 16px; padding: 4px 6px; border-radius: 4px;
+  min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: color .15s, background .15s;
+}
+.panel-close:hover { color: var(--text); background: var(--bg3); }
+.panel-close:active { color: var(--text); background: var(--bg3); }
+
+.panel-body {
+  padding: 18px;
+  padding-bottom: max(18px, calc(18px + env(safe-area-inset-bottom)));
+  overflow-y: auto; flex: 1;
+}
+.panel-section { margin-bottom: 18px; }
+.panel-section:last-child { margin-bottom: 0; }
+.panel-section h3 {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--muted);
+  margin-bottom: 8px;
+}
+.kv-grid {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 5px 10px; align-items: baseline;
+}
+.kv-k { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.kv-v { font-size: 11px; font-family: var(--mono); color: var(--text); word-break: break-all; }
+.panel-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.panel-list li {
+  font-size: 11px; padding: 5px 10px;
+  background: var(--bg3); border-radius: 4px;
+}
+.pl-g { border-left-color: var(--green); }
+.pl-b { border-left-color: var(--blue); }
+.pl-y { border-left-color: var(--yellow); }
+.pl-r { border-left-color: var(--red); }
+.pl-p { border-left-color: var(--purple); }
+
+/* ── VLANS TAB ────────────────────────────────────────────── */
+.vlan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.vlan-card {
+  background: var(--entry);
+  border-radius: 8px; overflow: hidden;
+}
+.vlan-card-head {
+  padding: 12px 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.vlan-tag {
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  padding: 3px 8px; border-radius: 4px;
+  min-width: 48px; text-align: center;
+}
+.vlan-card-head h3 { font-size: 14px; font-weight: 600; }
+.vlan-subnet { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: auto; }
+.vlan-body { padding: 12px 14px; }
+.chip-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.chip {
+  font-size: 10px; font-family: var(--mono); padding: 2px 7px;
+  background: var(--bg3); border-radius: 4px;
+}
+.fw-table { width: 100%; border-collapse: collapse; }
+.fw-table th {
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px;
+  color: var(--muted); padding: 5px 7px; text-align: left;
+}
+.fw-table td { font-size: 11px; font-family: var(--mono); padding: 5px 7px; border-bottom: 1px solid var(--bg3); }
+.fw-table tr:last-child td { border-bottom: none; }
+.a-pass  { color: var(--green); font-weight: 700; }
+.a-block { color: var(--red);   font-weight: 700; }
+
+/* ── AGENT60 TAB ──────────────────────────────────────────── */
+.section-heading {
+  font-size: 15px; font-weight: 600; margin-bottom: 14px;
+  padding-bottom: 10px;
+}
+.report-cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px; margin-bottom: 24px;
+}
+.report-card {
+  background: var(--entry);
+  border-radius: 8px; padding: 14px;
+}
+.rc-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.rc-head h3 { font-size: 13px; font-weight: 600; }
+.rc-cron {
+  font-family: var(--mono); font-size: 10px; color: var(--muted);
+  background: var(--bg3); padding: 2px 7px; border-radius: 3px; margin-left: auto;
+}
+.rc-desc { font-size: 12px; color: var(--muted); margin-bottom: 10px; line-height: 1.5; }
+
+.pipeline {
+  display: flex; align-items: stretch; flex-wrap: wrap; gap: 0;
+  background: var(--entry);
+  border-radius: 8px; padding: 16px; overflow-x: auto;
+  margin-bottom: 24px;
+}
+.p-step {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 3px; padding: 10px 12px;
+  background: var(--bg3);
+  border-radius: 6px; min-width: 100px; text-align: center; flex-shrink: 0;
+}
+.p-icon   { font-size: 16px; }
+.p-name   { font-size: 11px; font-weight: 600; }
+.p-detail { font-size: 10px; color: var(--muted); font-family: var(--mono); }
+.p-arrow  { font-size: 16px; color: var(--muted); padding: 0 6px; align-self: center; flex-shrink: 0; }
+
+/* ── TROUBLESHOOTING ──────────────────────────────────────── */
+.trouble-block { margin-bottom: 28px; }
+.trouble-heading {
+  font-size: 14px; font-weight: 600; margin-bottom: 12px;
+  padding-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.accordion { border-radius: 8px; overflow: hidden; }
+.acc-item:last-child { border-bottom: none; }
+
+.acc-trigger {
+  width: 100%; background: var(--entry); border: none;
+  color: var(--text); cursor: pointer;
+  font-size: 13px; ; font-weight: 500;
+  padding: 13px 14px;
+  min-height: 48px;
+  display: flex; align-items: center; gap: 10px;
+  text-align: left; transition: background .15s;
+}
+.acc-trigger:hover { background: var(--bg3); }
+.acc-trigger:active { background: var(--bg3); }
+.acc-trigger.open  { background: var(--bg3); }
+
+.sev { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.sev-h { background: var(--red); }
+.sev-m { background: var(--yellow); }
+.sev-l { background: var(--green); }
+
+.acc-chevron { margin-left: auto; font-size: 11px; color: var(--muted); transition: transform .2s; }
+.acc-trigger.open .acc-chevron { transform: rotate(180deg); }
+
+.status-pill {
+  font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600;
+}
+.s-fixed   { background: rgba(63,185,80,.2);  color: var(--green); }
+.s-known   { background: rgba(210,153,34,.2); color: var(--yellow); }
+.s-pending { background: rgba(88,166,255,.15);color: var(--blue); }
+
+.acc-body {
+  display: none; padding: 14px;
+  background: var(--entry);
+}
+.acc-body.open { display: block; }
+.issue-box {
+  background: var(--bg3); border-radius: 6px; padding: 14px;
+}
+.issue-box h4 {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .6px; color: var(--muted); margin-bottom: 6px;
+}
+.issue-box p { font-size: 12px; color: var(--text); line-height: 1.55; margin-bottom: 8px; }
+.issue-box p:last-child { margin-bottom: 0; }
+.code-block {
+  font-family: var(--mono); font-size: 11px;
+  background: var(--theme); color: var(--green);
+  padding: 10px 12px; border-radius: 4px;
+  overflow-x: auto; white-space: pre;
+  margin-top: 8px; display: block;
+}
+.ic { font-family: var(--mono); font-size: 11px; background: var(--theme); padding: 1px 5px; border-radius: 3px; }
+
+/* ── DOCUMENTATION TAB ────────────────────────────────────── */
+#tab-docs { max-width: 980px; margin: 0 auto; }
+
+.docs-hero {
+  position: relative;
+  background: linear-gradient(135deg, rgba(31,71,136,.22), rgba(63,75,191,.06));
+  border: 1px solid #3f4bbf;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.docs-hero-ico {
+  font-size: 36px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.docs-hero h2  { font-size: 20px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
+.docs-lead     { font-size: 13px; line-height: 1.7; color: var(--text); }
+.docs-p        { font-size: 13px; line-height: 1.65; color: var(--text); margin-bottom: 12px; }
+.docs-p:last-child { margin-bottom: 0; }
+.docs-muted    { color: var(--muted); font-size: 12px; line-height: 1.55; margin: 6px 0 0; }
+
+/* Section headings get a top margin so each block has breathing room */
+#tab-docs .section-heading {
+  font-size: 15px;
+  margin-top: 32px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+}
+#tab-docs .section-heading:first-of-type { margin-top: 0; }
+
+.section-heading-sm {
+  font-size: 11px; font-weight: 700;
+  margin-top: 18px; margin-bottom: 10px;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* Lists inside docs need a touch more vertical room */
+#tab-docs .panel-list { gap: 6px; margin-bottom: 6px; }
+#tab-docs .panel-list li { padding: 7px 12px; font-size: 12px; line-height: 1.55; }
+.tab-link { color: var(--blue); cursor: pointer; text-decoration: none; border-bottom: 1px dashed transparent; transition: border-color .15s ease; }
+.tab-link:hover { border-bottom-color: var(--blue); }
+
+/* Tables ── scrollable on narrow viewports */
+.docs-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #4a4a4a;          /* brighter outer frame so the table pops from #000 */
+  background: #14141a;                 /* lifted a touch above var(--entry) */
+}
+.docs-table {
+  width: 100%; border-collapse: collapse;
+  background: transparent; border: none; border-radius: 0;
+  overflow: visible; margin: 0;
+}
+.docs-table th {
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+  color: #d4d4d4;                       /* brighter header text */
+  padding: 10px 12px; text-align: left; white-space: nowrap;
+  background: #1f1a2e;                  /* subtle purple-tinted header bar — matches the page theme */
+  border-bottom: 1px solid #5a4a85;     /* purple-tinged divider below the header row */
+}
+.docs-table td {
+  font-size: 12px; padding: 9px 12px;
+  border-bottom: 1px solid #3a3a3a;     /* clearer row separator (was nearly invisible at var(--bg3)) */
+  color: var(--text);
+  vertical-align: top;
+}
+.docs-table tr:hover td { background: rgba(181,138,255,.04); }  /* faint purple row-hover */
+.docs-table tr:last-child td { border-bottom: none; }
+.docs-table td:first-child { font-weight: 600; white-space: nowrap; }
+
+/* Cards */
+.docs-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-bottom: 8px;
+}
+.docs-card {
+  background: var(--entry); border-radius: 8px;
+  padding: 16px 18px;
+}
+.docs-card h4 {
+  font-size: 13px; font-weight: 600; margin-bottom: 10px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--bg3);
+}
+.docs-card p  { font-size: 12px; line-height: 1.55; color: var(--text); }
+.docs-card ul {
+  list-style: none; display: flex; flex-direction: column; gap: 6px;
+}
+.docs-card ul li {
+  font-size: 12px; line-height: 1.5; color: var(--text);
+  padding-left: 14px; position: relative;
+}
+.docs-card ul li::before {
+  content: "▸"; position: absolute; left: 0;
+  color: var(--blue); font-size: 10px; top: 3px;
+}
+
+/* Ordered list (physical wiring) */
+.docs-ol {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 14px;
+}
+.docs-ol li {
+  font-size: 13px; line-height: 1.55; color: var(--text);
+  padding: 10px 12px 10px 40px;
+  background: var(--entry);
+  border-radius: 6px;
+  position: relative;
+  counter-increment: step;
+}
+.docs-ol li::before {
+  content: counter(step);
+  position: absolute;
+  left: 12px; top: 50%; transform: translateY(-50%);
+  width: 20px; height: 20px;
+  background: var(--blue);
+  color: var(--theme);
+  font-size: 11px; font-weight: 700;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Nested code-style list for chmod paths (replaces docs-nested) */
+.docs-codelist {
+  margin-top: 8px;
+  background: var(--theme);
+  border-radius: 4px;
+  padding: 8px 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+}
+.docs-codelist .path { color: var(--green); }
+.docs-codelist .mode { color: var(--muted); }
+
+/* ── SUBNET STRIP ─────────────────────────────────────────── */
+.subnet-strip {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin: 0 0 10px; padding: 8px 10px;
+  background: var(--entry);
+  border-radius: 6px;
+  justify-content: left;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  gap: 16;
+}
+.ss-internet { color: var(--blue);  border-color: var(--blue); }
+.ss-wwan { color: var(--yellow);   border-color: var(--blue); }
+.ss-vlan10 { color: var(--teal);   border-color: var(--teal); }
+
+/* ── SVG CONNECTIONS ──────────────────────────────────────── */
+.cl {
+  fill: none; stroke-width: 3; 
+}
+
+.cl-internet { stroke: var(--blue) }
+.cl-wwan     { stroke: var(--yellow); stroke-dasharray: 9 7;}
+.cl-vlan10     { stroke: var(--teal);}
+
+/* Node + boundary dimming when something is selected */
+#topo-wrap.has-selection .node {
+  opacity: 0.12;
+  transition: opacity .25s;
+}
+#topo-wrap.has-selection .node.selected,
+#topo-wrap.has-selection .node.conn-lit {
+  opacity: 1;
+  transition: opacity .25s;
+}
+#topo-wrap.has-selection .bx-label {
+  opacity: 0.25;
+  transition: opacity .25s;
+}
+#topo-wrap.has-selection .bx {
+  border-color: rgba(48,54,61,.35);
+  transition: border-color .25s;
+}
+/* Dim the subnet strip container itself (its blue outline) when something
+   is selected — otherwise the bright border stays visible while chips fade. */
+#topo-wrap.has-selection .subnet-strip {
+  border-color: transparent;
+  background: transparent;
+  transition: border-color .25s, background .25s;
+}
+/* Keep selected node's own boundary visible */
+#topo-wrap.has-selection .node.selected,
+#topo-wrap.has-selection .node.conn-lit {
+  z-index: 20;
+}
+
+/* ── MOBILE / RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 900px) {
+  main { padding: 16px; }
+  /* Topology becomes horizontally scrollable so the diagram stays legible */
+  .topo-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    padding-bottom: 10px;
+    /* Fade right edge to signal more content */
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 36px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 36px), transparent 100%);
+  }
+  .topo-layout { min-width: 900px; }
+  #conn-svg { min-width: 900px; }
+}
+
+@media (max-width: 768px) {
+  /* Nav: tighter, scrollable, safe-area aware */
+  nav { padding: 0 max(12px, env(safe-area-inset-left)); }
+  .tab-btn { font-size: 12px; padding: 10px 12px; gap: 5px; min-height: 44px; }
+
+  /* Main padding — safe area on sides */
+  main {
+    padding: 14px max(12px, env(safe-area-inset-right)) 14px max(12px, env(safe-area-inset-left));
+  }
+
+  /* Detail panel fills the screen */
+  #detail-panel { width: 100%; right: -100%; }
+  #detail-panel.open { right: 0; }
+  .panel-head { padding: 14px; padding-top: max(14px, env(safe-area-inset-top)); }
+  .panel-body {
+    padding: 14px;
+    padding-bottom: max(14px, calc(14px + env(safe-area-inset-bottom)));
+  }
+
+  /* Subnet strip: chips slightly smaller but still 11px min */
+  .subnet-strip { padding: 6px 8px; gap: 5px; }
+
+  /* Legend wraps cleanly */
+  .topo-legend { padding: 8px 10px; gap: 10px; }
+  .legend-item { font-size: 11px; }
+  .legend-toggle { padding: 6px 12px; min-height: 36px; }
+
+  /* VLANs tab: single column, smaller padding, scrollable tables */
+  .vlan-grid { grid-template-columns: 1fr; gap: 12px; }
+  .vlan-card-head { padding: 10px 12px; }
+  .vlan-body { padding: 10px 12px; overflow-x: auto; }
+  .fw-table th, .fw-table td { font-size: 11px; padding: 6px 8px; }
+
+  /* agent60 tab: single column */
+  .report-cards { grid-template-columns: 1fr; }
+
+  /* Pipeline: vertical stack on mobile */
+  .pipeline {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: unset;
+    padding: 14px;
+    gap: 0;
+  }
+  .p-step {
+    width: 100%; max-width: 280px; min-width: unset;
+    padding: 10px 14px; flex-direction: row; justify-content: flex-start;
+    gap: 10px; text-align: left;
+  }
+  .p-icon { font-size: 18px; flex-shrink: 0; }
+  .p-name { font-size: 12px; }
+  .p-detail { font-size: 11px; }
+  .p-arrow {
+    font-size: 18px; padding: 4px 0;
+    transform: rotate(90deg);
+    align-self: center;
+  }
+
+  /* Troubleshooting accordion */
+  .acc-trigger {
+    font-size: 12px; padding: 12px 12px 12px 12px; gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+    padding-right: 36px;
+  }
+  .acc-chevron {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    margin-left: 0;
+  }
+  .acc-trigger.open .acc-chevron { transform: translateY(-50%) rotate(180deg); }
+  .acc-body { padding: 0 12px 12px; }
+  .issue-box { padding: 12px; }
+  .status-pill { font-size: 10px; padding: 2px 7px; }
+  .code-block { font-size: 11px; padding: 8px 10px; }
+
+  /* Docs tab */
+  .docs-hero { padding: 16px; gap: 14px; }
+  .docs-hero-ico { font-size: 30px; }
+  .docs-hero h2 { font-size: 17px; }
+  .docs-lead { font-size: 12px; }
+  .docs-cards { grid-template-columns: 1fr; }
+  #tab-docs .section-heading { margin-top: 26px; }
+  .docs-codelist { font-size: 11px; padding: 6px 8px; }
+}
+
+@media (max-width: 480px) {
+  /* Tab buttons: icon + short label, generous tap area */
+  .tab-btn { padding: 10px 10px; font-size: 12px; gap: 4px; }
+  .topo-layout { min-width: 760px; }
+  #conn-svg { min-width: 760px; }
+  .fw-table th, .fw-table td { font-size: 11px; padding: 5px 6px; }
+  .docs-table th, .docs-table td { font-size: 11px; padding: 7px 9px; }
+
+  /* Pipeline steps full-width on small phones */
+  .p-step { max-width: 100%; }
+
+  /* Keep section headings readable */
+  .section-heading { font-size: 14px; }
+  .trouble-heading { font-size: 13px; }
+
+  /* Docs hero: stack icon above text on very small screens */
+  .docs-hero { flex-direction: column; }
+  .docs-hero-ico { font-size: 28px; margin-top: 0; }
+}
+
+/* ── CONNECTION LIST (panel) ──────────────────────────────── */
+.conn-list { display: flex; flex-direction: column; gap: 5px; }
+.conn-item {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 7px 10px; background: var(--bg3); border-radius: 5px;
+}
+.conn-dot   { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+.conn-arrow { font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.conn-info  { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.conn-name  { font-size: 12px; font-weight: 600; }
+.conn-desc  { font-size: 10px; color: var(--muted); font-family: var(--mono); line-height: 1.4; }
